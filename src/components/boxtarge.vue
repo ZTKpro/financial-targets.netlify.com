@@ -2,7 +2,7 @@
   <div class="box">
     <h2>3 MONTHS</h2>
 
-    <div id="box" class="box_item">
+    <div   id="box" class="box_item">
       <h3>{{ months3.name }}</h3>
       <p class="item_cost">{{months3.cost}}</p>
       <div class="box_progresbar">
@@ -70,44 +70,49 @@ export default {
   data() {
     return {
       months3: {
-
         name: "KPP",
         cost: "690,00 zł",
-        cost: "690,00 zł",
+        mycost: "690,00 zł",
 
         name1: "ASG KIT",
         cost1: "1 286,00 zł",
+        mycost: "690,00 zł",
 
         name2: "OWD",
-        cost2: "1 290,00 zł"
-
+        cost2: "1 290,00 zł",
+        mycost: "690,00 zł"
       },
       months12: {
 
-        name: "MOTOBIKE",
-        cost: "11 550,00 zł",
+        name: "DRIVING LICENSE",
+        cost: "1 990,00 zł",
+        mycost: "690,00 zł",
 
-        name1: "DRIVING LICENSE",
-        cost1: "1 990,00 zł"
-
+        name1: "MOTOBIKE",
+        cost1: "11 550,00 zł",
+        mycost: "690,00 zł"
       },
       years3: {
         name: "AUDI A5",
-        cost: "66 000,00 zł"
+        cost: "66 000,00 zł",
+        mycost: "690,00 zł"
       },
       years6: {
         name: "HOUSE",
-        cost: "300 000,00 zł"
-      },
+        cost: "300 000,00 zł",
+        mycost: "690,00 zł"
+      }
     };
   },
   methods: {
-    appendDreams() {
-   
+    progressBar() {
+      for (let i = 0; i < 10; i++) {
+        console.log('aa');
+      }
     }
   },
   created: function() {
-    this.appendDreams();
+    this.progressBar();
   }
 };
 </script>
