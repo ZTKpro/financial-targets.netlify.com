@@ -34,4 +34,10 @@
   background-color: red;
   display: none;
 }
+
+@media (max-width: 1200px) {
+  .nav {
+    padding: 0 50px;
+  }
+}
 </style>

@@ -1,66 +1,33 @@
 <template>
-  <div class="box">
-    <h2>3 MONTHS</h2>
-
-    <div   id="box" class="box_item">
-      <h3>{{ months3.name }}</h3>
-      <p class="item_cost">{{months3.cost}}</p>
-      <div class="box_progresbar">
-        <div style="width:32%" class="bar"></div>
+  <div>
+    <div class="box">
+      <h2>months3</h2>
+      <div v-for="(item,item2,item3) in months3" class="box_item" :key="item.id">
+        <h3 v-for="value in item" :key="item.value">{{value}}</h3>
+        <div class="box_progresbar">
+          <div  class="bar"></div>
+        </div>
       </div>
-    </div>
-
-    <div id="box" class="box_item">
-      <h3>{{ months3.name1 }}</h3>
-      <p class="item_cost">{{months3.cost1}}</p>
-      <div class="box_progresbar">
-        <div style="width:32%" class="bar"></div>
+      <h2>months12</h2>
+      <div v-for="(item,item2,item3) in months12" class="box_item" :key="item.id" >
+        <h3 v-for="value in item" :key="value.id">{{value}}</h3>
+        <div class="box_progresbar">
+          <div class="bar"></div>
+        </div>
       </div>
-    </div>
-
-    <div id="box" class="box_item">
-      <h3>{{ months3.name2 }}</h3>
-      <p class="item_cost">{{months3.cost2}}</p>
-      <div class="box_progresbar">
-        <div style="width:32%" class="bar"></div>
+      <h2>years3</h2>
+      <div v-for="(item,item2,item3) in years3" class="box_item" :key="item.id">
+        <h3 v-for="value in item" :key="value.id">{{value}}</h3>
+        <div class="box_progresbar">
+          <div class="bar"></div>
+        </div>
       </div>
-    </div>
-
-    <h2>12 MONTHS</h2>
-
-    <div id="box" class="box_item">
-      <h3>{{ months12.name }}</h3>
-      <p class="item_cost">{{months12.cost}}</p>
-      <div class="box_progresbar">
-        <div style="width:62%" class="bar"></div>
-      </div>
-    </div>
-
-    <div id="box" class="box_item">
-      <h3>{{ months12.name1 }}</h3>
-      <p class="item_cost">{{months12.cost1}}</p>
-      <div class="box_progresbar">
-        <div style="width:62%" class="bar"></div>
-      </div>
-    </div>
-
-    <h2>3 YEARS</h2>
-
-    <div id="box" class="box_item">
-      <h3>{{ years3.name }}</h3>
-      <p class="item_cost">{{years3.cost}}</p>
-      <div class="box_progresbar">
-        <div style="width:2%" class="bar"></div>
-      </div>
-    </div>
-
-    <h2>6 YEARS</h2>
-
-    <div id="box" class="box_item">
-      <h3>{{ years6.name }}</h3>
-      <p class="item_cost">{{years6.cost}}</p>
-      <div class="box_progresbar">
-        <div style="width:2%" class="bar"></div>
+      <h2>years6</h2>
+      <div v-for="(item,item2,item3) in years6" class="box_item" :key="item.id">
+        <h3 v-for="value in item" :key="value.id">{{value}}</h3>
+        <div class="box_progresbar">
+          <div  class="bar"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -70,45 +37,53 @@ export default {
   data() {
     return {
       months3: {
-        name: "KPP",
-        cost: "690,00 zł",
-        mycost: "690,00 zł",
-
-        name1: "ASG KIT",
-        cost1: "1 286,00 zł",
-        mycost: "690,00 zł",
-
-        name2: "OWD",
-        cost2: "1 290,00 zł",
-        mycost: "690,00 zł"
+        item: {
+          nameTag: "KPP",
+          mycost: "100",
+          cost: "690"
+        },
+        item2: {
+          nameTag: "ASG KIT",
+          mycost: "0",
+          cost1: "1 286"
+        },
+        item3: {
+          nameTag: "OWD",
+          mycost: "0",
+          cost2: "1 290"
+        }
       },
       months12: {
-
-        name: "DRIVING LICENSE",
-        cost: "1 990,00 zł",
-        mycost: "690,00 zł",
-
-        name1: "MOTOBIKE",
-        cost1: "11 550,00 zł",
-        mycost: "690,00 zł"
+        item: {
+          nameTag: "DRIVING LICENSE",
+          mycost: "0",
+          cost: "1 999"
+        },
+        item1: {
+          nameTag1: "MOTOBIKE",
+          mycost: "0",
+          cost1: "11 550"
+        }
       },
       years3: {
-        name: "AUDI A5",
-        cost: "66 000,00 zł",
-        mycost: "690,00 zł"
+        item: {
+          nameTag: "AUDI A5",
+          mycost: "0",
+          cost: "66 000"
+        }
       },
       years6: {
-        name: "HOUSE",
-        cost: "300 000,00 zł",
-        mycost: "690,00 zł"
+        item: {
+          nameTag: "HOUSE",
+          mycost: "0",
+          cost: "300 000"
+        }
       }
     };
   },
   methods: {
     progressBar() {
-      for (let i = 0; i < 10; i++) {
-        console.log('aa');
-      }
+
     }
   },
   created: function() {
@@ -135,6 +110,7 @@ h2 {
   align-items: center;
   position: relative;
   overflow: hidden;
+  list-style: none;
 }
 .box_progresbar {
   height: 5px;
@@ -146,6 +122,12 @@ h2 {
 }
 .box_progresbar > .bar {
   height: 100%;
+  width: 0.45%;
   background-color: #16cae6;
+}
+@media (max-width: 1200px) {
+  .box {
+    padding: 0 50px;
+  }
 }
 </style>
