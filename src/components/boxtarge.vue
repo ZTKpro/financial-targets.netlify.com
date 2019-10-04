@@ -3,30 +3,38 @@
     <div class="box">
       <h2>months3</h2>
       <div v-for="(item,item2,item3) in months3" class="box_item" :key="item.id">
-        <h3 v-for="value in item" :key="item.value">{{value}}</h3>
+        <h3>{{item.nameTag}}</h3>
+        <p>{{item.mycost}}</p>
+        <p>{{item.toBuy}}</p>
         <div class="box_progresbar">
-          <div  class="bar"></div>
+          <div class="bar" ></div>
         </div>
       </div>
       <h2>months12</h2>
-      <div v-for="(item,item2,item3) in months12" class="box_item" :key="item.id" >
-        <h3 v-for="value in item" :key="value.id">{{value}}</h3>
+      <div v-for="(item,item2,item3) in months12" class="box_item" :key="item.id">
+        <h3>{{item.nameTag}}</h3>
+        <p>{{item.mycost}}</p>
+        <p>{{item.cost}}</p>
         <div class="box_progresbar">
           <div class="bar"></div>
         </div>
       </div>
       <h2>years3</h2>
       <div v-for="(item,item2,item3) in years3" class="box_item" :key="item.id">
-        <h3 v-for="value in item" :key="value.id">{{value}}</h3>
+        <h3>{{item.nameTag}}</h3>
+        <p>{{item.mycost}}</p>
+        <p>{{item.cost}}</p>
         <div class="box_progresbar">
           <div class="bar"></div>
         </div>
       </div>
       <h2>years6</h2>
       <div v-for="(item,item2,item3) in years6" class="box_item" :key="item.id">
-        <h3 v-for="value in item" :key="value.id">{{value}}</h3>
+        <h3>{{item.nameTag}}</h3>
+        <p>{{item.mycost}}</p>
+        <p>{{item.cost}}</p>
         <div class="box_progresbar">
-          <div  class="bar"></div>
+          <div class="bar"></div>
         </div>
       </div>
     </div>
@@ -39,30 +47,33 @@ export default {
       months3: {
         item: {
           nameTag: "KPP",
-          mycost: "100",
-          cost: "690"
+          mycost: 25,
+          cost: 690,
+          toBuy: 0,
         },
         item2: {
           nameTag: "ASG KIT",
-          mycost: "0",
-          cost1: "1 286"
+          mycost: 0,
+          cost: 1286,
+          toBuy: 0,
         },
         item3: {
           nameTag: "OWD",
-          mycost: "0",
-          cost2: "1 290"
+          mycost: 0,
+          cost: 1290,
+          toBuy: 0,
         }
       },
       months12: {
         item: {
           nameTag: "DRIVING LICENSE",
-          mycost: "0",
-          cost: "1 999"
+          mycost: 0,
+          cost: 1999
         },
         item1: {
-          nameTag1: "MOTOBIKE",
+          nameTag: "MOTOBIKE",
           mycost: "0",
-          cost1: "11 550"
+          cost: "11 550"
         }
       },
       years3: {
@@ -82,16 +93,12 @@ export default {
     };
   },
   methods: {
-    progressBar() {
-
-    }
+  
   },
-  created: function() {
-    this.progressBar();
-  }
 };
 </script>
 <style>
+
 h2 {
   margin: 10px;
 }
