@@ -1,0 +1,17 @@
+[
+    {
+        "nameTarget": "KPP",
+        "mycost": 25, 
+        "cost": 690
+    },
+    {
+        "nameTarget": "ASG KIT",
+        "mycost": 0, 
+        "cost": 1286
+    },
+    {
+        "nameTarget": "OWD",
+        "mycost": 0, 
+        "cost": 1290
+    }
+]
